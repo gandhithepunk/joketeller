@@ -1,4 +1,4 @@
-const intros = ['knock, knock!', 'A horse walks into a bar.', 'what do you get when you combine a'];
+const intros = ['Knock, knock!', 'A horse walks into a bar.', 'What do you get when you combine a'];
 
 let jokeMiddles = {
     knockMiddles: ['Orange', 'Leon', 'Quiche' ],
@@ -11,3 +11,13 @@ let jokeEnds = {
     barEnds: ['The horse says, “You read my mind, buddy.”', 'The bartender exclaims "Woah! Woah! Woah! No need to be so coltish!"', 'The bartender proceeds to give him the drink and says “Why the strong mace?”'],
     combineEnds: ['A Kick-Ass animal!', 'A monster that can scare old ladies across the street!', 'A Rocket!']
 };
+
+const getRandom = () => {
+    return Math.floor(Math.random()*3);
+}
+let beginning = intros[getRandom()];
+console.log(beginning);
+
+const getJoke = (beginning, middle, end) => {
+
+}
