@@ -1,9 +1,9 @@
-const intros = ['Knock, knock!', 'A horse walks into a bar.', 'What do you get when you combine a'];
+const intros = ['Knock, knock!', 'A horse walks into a bar.', 'What do you get when you combine'];
 
 let jokeMiddles = {
     knockMiddles: ['Orange', 'Leon', 'Quiche' ],
-    barMiddles: ['The shocked bartender points a finger his way in alarm and yells, “Hey!”', 'He says to the bartender "If you ask \'why the long face?\', I\'m going to kick you in the nits!"', 'He orders a drink and puts a can of pepper spray on top the bar.'],
-    combineMiddles: ['kangaroo with a donkey?', ' monster and a boy scout?', 'the Rock and E.T.?']
+    barMiddles: ['The shocked bartender points a finger his way in alarm and yells, “Hey!”', 'He says to the bartender "If you ask \'why the long face?\', I\'m going to kick you in the nuts!"', 'He orders a drink and puts a can of pepper spray on top the bar.'],
+    combineMiddles: ['a kangaroo with a donkey?', 'a monster and a boy scout?', 'the Rock and E.T.?']
 };
 
 let jokeEnds = {
@@ -22,21 +22,28 @@ let end;
 
 const buildJoke = (beginning) => {
     if (beginning === 'Knock, knock!') {
-        console.log('If loop Knock Knock');
         middle = jokeMiddles.knockMiddles[getRandom()];
         end = jokeEnds.knockEnds[getRandom()];
     } else if (beginning === 'A horse walks into a bar.') {
-        console.log('If loop Bar');
         middle = jokeMiddles.barMiddles[getRandom()];
         end = jokeEnds.barEnds[getRandom()];
     } else {
-        console.log('If loop combine');
         middle = jokeMiddles.combineMiddles[getRandom()];
         end = jokeEnds.combineEnds[getRandom()];
     }
 }
-buildJoke(beginning);
 
-console.log(beginning);
-console.log(middle);
-console.log(end);
+const tellJoke = (begin) => {
+    buildJoke(begin);
+    if (begin === 'Knock, knock!') {
+        console.log(beginning);
+        console.log("Who's there?");
+        console.log(middle);
+        console.log(`${middle} who?`);
+        console.log(end);
+    } else {
+        console.log(beginning+' '+middle+' '+end)
+    };
+}
+
+tellJoke(beginning);
