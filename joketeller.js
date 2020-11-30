@@ -15,9 +15,28 @@ let jokeEnds = {
 const getRandom = () => {
     return Math.floor(Math.random()*3);
 }
+
 let beginning = intros[getRandom()];
-console.log(beginning);
+let middle;
+let end;
 
-const getJoke = (beginning, middle, end) => {
-
+const buildJoke = (beginning) => {
+    if (beginning === 'Knock, knock!') {
+        console.log('If loop Knock Knock');
+        middle = jokeMiddles.knockMiddles[getRandom()];
+        end = jokeEnds.knockEnds[getRandom()];
+    } else if (beginning === 'A horse walks into a bar.') {
+        console.log('If loop Bar');
+        middle = jokeMiddles.barMiddles[getRandom()];
+        end = jokeEnds.barEnds[getRandom()];
+    } else {
+        console.log('If loop combine');
+        middle = jokeMiddles.combineMiddles[getRandom()];
+        end = jokeEnds.combineEnds[getRandom()];
+    }
 }
+buildJoke(beginning);
+
+console.log(beginning);
+console.log(middle);
+console.log(end);
