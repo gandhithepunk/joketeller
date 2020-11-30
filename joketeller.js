@@ -12,6 +12,7 @@ let jokeEnds = {
     combineEnds: ['A Kick-Ass animal!', 'A monster that can scare old ladies across the street!', 'A Rocket!']
 };
 
+// gets random number
 const getRandom = () => {
     return Math.floor(Math.random()*3);
 }
@@ -20,6 +21,7 @@ let beginning = intros[getRandom()];
 let middle;
 let end;
 
+// assigns the biggining, middle, and end randomly
 const buildJoke = (beginning) => {
     if (beginning === 'Knock, knock!') {
         middle = jokeMiddles.knockMiddles[getRandom()];
@@ -33,6 +35,7 @@ const buildJoke = (beginning) => {
     }
 }
 
+// puts all the pieces together to build the joke
 const tellJoke = (begin) => {
     buildJoke(begin);
     if (begin === 'Knock, knock!') {
